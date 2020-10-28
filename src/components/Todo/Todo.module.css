@@ -1,0 +1,14 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+
+.error {
+  color: red;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
