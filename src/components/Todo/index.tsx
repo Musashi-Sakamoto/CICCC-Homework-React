@@ -18,6 +18,11 @@ const Todo = () => {
     }
   };
 
+  const onRemoveClick = (index: number) => () => {
+    const prod = products.filter((_, i) => i !== index);
+    setProducts(prod);
+  };
+
   return (
     <div className={styles.container}>
       <TodoPicker
@@ -31,7 +36,11 @@ const Todo = () => {
       </p>
       <ul className={styles.list}>
         {products.map((product, i) => (
-          <TodoItem key={i} product={product} />
+          <TodoItem
+            key={i}
+            product={product}
+            onRemoveClicked={onRemoveClick(i)}
+          />
         ))}
       </ul>
     </div>

@@ -14,6 +14,11 @@ interface IProps {
 const TodoPicker = ({ products, onHandleChange, selected }: IProps) => {
   return (
     <select value={selected} onChange={onHandleChange}>
+      <option disabled selected value={""}>
+        {" "}
+        -- select an option --{" "}
+      </option>
+
       {products.map((product, i) => (
         <option key={i} value={JSON.stringify(product)}>
           {product.item} ${product.price}
